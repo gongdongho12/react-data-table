@@ -1,15 +1,22 @@
 {
-  "name": "npm-react-test-component",
-  "version": "1.0.0",
+  "name": "@gongdongho12/npm-react-test-component",
+  "version": "0.0.1",
   "description": "Made with create-react-library",
   "author": "gongdongho12",
   "license": "MIT",
-  "repository": "gongdongho12/npm-react-test-component",
+  "keyword": "dd",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gongdongho12/npm-react-test-component"
+  },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
