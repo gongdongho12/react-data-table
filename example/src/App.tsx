@@ -1,10 +1,9 @@
 import React from 'react'
 
-import { ExampleComponent } from 'npm-react-test-component'
-import 'npm-react-test-component/dist/index.css'
+import DataTable from 'react-data-table'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <DataTable data={[{a: 1, b: 2, c: 3}]} />
 }
 
 export default App
