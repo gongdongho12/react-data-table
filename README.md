@@ -13,15 +13,15 @@ npm install --save @storelink-io/react-data-table
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from '@storelink-io/react-data-table'
+import DataTable from '@storelink-io/react-data-table'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <DataTable data={[{a: 1, b: 2, c: 3}]} />
   }
 }
 ```
 
 ## License
 
-MIT © [gongdongho12](https://github.com/gongdongho12)
+MIT © [storelink-io](https://github.com/storelink-io)
