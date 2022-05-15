@@ -147,7 +147,7 @@ const DataTable: FunctionComponent<IDataTableProps> = (props) => {
                   const { rowKey } = gridEvent;
                   onUnSelect(rowKey)
                 }) as any}
-                onUncheckAll={((gridEvent: any) => {
+                onUncheckAll={(() => {
                   onUnSelect(undefined, true)
                 }) as any}
                 rowHeaders={rowHeaders}
