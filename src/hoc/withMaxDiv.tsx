@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { ComponentType, FunctionComponent } from 'react'
-import FlexCenter from '../FlexCenter'
+import FlexCenter from 'component/FlexCenter'
 import useMeasure from 'react-use-measure'
 import { useDebounce } from 'use-debounce';
 

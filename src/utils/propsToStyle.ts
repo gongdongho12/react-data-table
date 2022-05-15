@@ -4,8 +4,8 @@ export const propsToStyle = (props: CSSProperties): string => {
   if (!props || typeof props !== 'object') return ""
   
   let output = "";
-  for (let key in props) {
-    if (props.hasOwnProperty(key)) {
+  for (const key in props) {
+    if (key in props) {
       const casedKey = cssCasing(key);
       const value = (props as any)[key];
       const isNumberToPixel: boolean = typeof value === 'number' && ['width', 'height'].includes(casedKey);
@@ -17,7 +17,7 @@ export const propsToStyle = (props: CSSProperties): string => {
 
 const cssCasing = (camelString: string): string => {
   let output = ""
-  let stringArr = camelString.split("");
+  const stringArr = camelString.split("");
 
   stringArr.map((sChar) => {
     if (!isUppercase(sChar)) {

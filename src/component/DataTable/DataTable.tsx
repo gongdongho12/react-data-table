@@ -3,11 +3,11 @@ import React, { FunctionComponent, useCallback, useEffect, useMemo, useRef, useS
 import "tui-grid/dist/tui-grid.css";
 import TuiGrid from 'tui-grid';
 import Grid from "@toast-ui/react-grid";
-import withMaxDiv from "../hoc/withMaxDiv";
+import withMaxDiv from "hoc/withMaxDiv";
 import { DataTableWrapper } from "./DataTableStyles";
-import toCapitalize from "../utils/toCapitalize";
+import toCapitalize from "utils/toCapitalize";
 import { Empty, Spin } from "antd";
-import FlexCenter from "../FlexCenter";
+import FlexCenter from "component/FlexCenter";
 
 TuiGrid.applyTheme("striped")
 TuiGrid.setLanguage('ko')

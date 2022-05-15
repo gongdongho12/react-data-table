@@ -1,2 +1,2 @@
-import DataTable from './DataTable'
+import DataTable from 'component/DataTable'
 export default DataTable
