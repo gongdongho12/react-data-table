@@ -79,11 +79,6 @@ const DataTable: FunctionComponent<IDataTableProps> = (props) => {
     }
   }, [columns, data]);
 
-  useEffect(() => {
-    console.log('data', data)
-    console.log('assignColumns', assignColumns)
-  }, [data, assignColumns])
-
   const isEmpty = data.length === 0;
   const isLoading = loading || (width === 0 && height === 0);
 
@@ -150,11 +145,9 @@ const DataTable: FunctionComponent<IDataTableProps> = (props) => {
                 }) as any}
                 onUncheck={((gridEvent: any) => {
                   const { rowKey } = gridEvent;
-                  console.log('rowKey', rowKey)
                   onUnSelect(rowKey)
                 }) as any}
                 onUncheckAll={((gridEvent: any) => {
-                  console.log('onUncheckAll', gridEvent)
                   onUnSelect(undefined, true)
                 }) as any}
                 rowHeaders={rowHeaders}
