@@ -8,6 +8,7 @@ import { DataTableWrapper } from "./DataTableStyles";
 import toCapitalize from "utils/toCapitalize";
 import { Empty, Spin } from "antd";
 import FlexCenter from "component/FlexCenter";
+import { IDataTheme } from "./IDataTable";
 
 TuiGrid.applyTheme("striped")
 TuiGrid.setLanguage('ko')
@@ -20,13 +21,23 @@ interface IDataTableProps {
   loading?: boolean;
   exportOption?: any;
   onCheck?: (row: number[]) => void;
+  onClick?: (select: any) => void;
+  theme?: IDataTheme
 }
 
 const DataTable: FunctionComponent<IDataTableProps> = (props) => {
-  const { bounds, data, columns, loading = false, rowHeaders = ['rowNum'], exportOption, onCheck } = props;
+  const { bounds, data, columns, loading = false, rowHeaders = ['rowNum'], exportOption, onCheck, onClick, theme } = props;
   const { width, height } = bounds;
 
   const [select, setSelect] = useState<number[]>([])
+
+  useEffect(() => {
+    const { type, preset } = theme || {}
+    if (type) {
+      TuiGrid.applyTheme(type, preset)
+    }
+  }, [theme])
+  
 
   useEffect(() => {
     if (onCheck) {
@@ -124,6 +135,7 @@ const DataTable: FunctionComponent<IDataTableProps> = (props) => {
                 columns={assignColumns}
                 rowHeight={25}
                 width={width}
+                onClick={onClick}
                 bodyHeight={height - 42}
                 heightResizable={false}
                 columnOptions={{
